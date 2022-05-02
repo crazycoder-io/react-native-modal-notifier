@@ -31,15 +31,15 @@ const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <View style={styles.modalHeader}>
-              <Text style={styles.modalText}>{value.title}</Text>
+              <Text style={styles.titleText}>{value.title}</Text>
               <TouchableHighlight
                 style={styles.closeButton}
                 onPress={() => setVisibility(false)}>
-                <Text>X</Text>
+                <Text style={styles.modalCloseIcon}>X</Text>
               </TouchableHighlight>
             </View>
             <View style={styles.modalContent}>
-              <Text style={styles.modalText}>{value.message}</Text>
+              <Text style={styles.messageText}>{value.message}</Text>
             </View>
           </View>
         </View>

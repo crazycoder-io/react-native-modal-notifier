@@ -7,9 +7,8 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   modalHeader: {
-    flex: 1,
-    paddingVertical: 5,
-    paddingHorizontal: 10,
+    paddingVertical: 12,
+    paddingHorizontal: 12,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -29,16 +28,18 @@ export default StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 7,
-    paddingHorizontal: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 14,
     backgroundColor: 'white',
     borderRadius: 20,
   },
+  modalCloseIcon: {
+    fontSize: 16,
+  },
   modalView: {
-    flex: 0.2,
+    minHeight: 130,
     flexDirection: 'column',
     borderRadius: 20,
-    justifyContent: 'center',
     backgroundColor: 'white',
 
     shadowColor: '#000',
@@ -51,13 +52,16 @@ export default StyleSheet.create({
     elevation: 5,
   },
   modalContent: {
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-
     padding: 20,
   },
-  modalText: {
+  titleText: {
     textAlign: 'center',
+    fontSize: 20,
+  },
+  messageText: {
+    textAlign: 'center',
+    fontSize: 17,
   },
 });
