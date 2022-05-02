@@ -1,0 +1,21 @@
+{
+  "name": "react-native-notifier",
+  "version": "1.0.0",
+  "description": "react-native-notifier is a third party in-app notification package! It provides modal notification popup.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["react-native-notifier", "notification", "react-native-notification", "react-native-modal", "react-native-in-app-notification"],
+  "homepage": "https://github.com/crazycoder-io/react-native-notifier#readme",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/crazycoder-io/react-native-notifier.git"
+  },
+  "author": "crazycoder-io",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "16.8.0",
+    "react-native": "0.61.0"
+  }
+}
