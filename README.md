@@ -6,7 +6,7 @@
 
 
 
-react-native-modal-notifier is a third party in-app notification package! It provides modal notification popup.
+**react-native-modal-notifier** is a third party in-app notification package! It provides modal notification popup.
 There are more than one usage example;
 1. Can be triggered by `useEffect` function
 2. Can be triggered by user action
