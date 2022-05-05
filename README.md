@@ -71,4 +71,4 @@ const HomeScreen = () => {
 |-----------------|:-------------|:---------------:|---------------:|
 | title | Title of the message | string | yes |
 | message | The message of the content | string | yes |
-
+| headerShown | Header visibility option | boolean | no |

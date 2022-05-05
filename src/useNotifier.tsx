@@ -5,8 +5,8 @@ import Context from './Context';
 export default () => {
   const {setValue, setVisibility} = useContext(Context);
 
-  const updateVal = (val: ValueProps) => {
-    setValue(val);
+  const updateVal = (values: ValueProps) => {
+    setValue((prev: ValueProps) => ({...prev, ...values}));
     setVisibility(true);
   };
 

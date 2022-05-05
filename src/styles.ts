@@ -3,11 +3,11 @@ import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   centeredView: {
     flex: 1,
-    paddingHorizontal: 80,
+    paddingHorizontal: 70,
     justifyContent: 'center',
   },
   modalHeader: {
-    paddingVertical: 12,
+    paddingVertical: 8,
     paddingHorizontal: 12,
     flexDirection: 'row',
     alignItems: 'center',
@@ -34,10 +34,10 @@ export default StyleSheet.create({
     borderRadius: 20,
   },
   modalCloseIcon: {
-    fontSize: 16,
+    fontSize: 15,
   },
   modalView: {
-    minHeight: 130,
+    minHeight: 60,
     flexDirection: 'column',
     borderRadius: 20,
     backgroundColor: 'white',
