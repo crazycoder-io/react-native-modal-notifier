@@ -11,6 +11,9 @@ export type ValueProps = {
   title: string;
   message: string;
   headerShown?: boolean;
+  primaryButtonText?: string;
+  primaryButtonColor?: string;
+  primaryButtonAction?: () => void;
 };
 
 const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
@@ -26,6 +29,11 @@ const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
     visibility,
     setVisibility,
   };
+
+  const primaryButtonStyles: {backgroundColor?: string} = {};
+  if (value.primaryButtonColor) {
+    primaryButtonStyles.backgroundColor = value.primaryButtonColor;
+  }
 
   return (
     <Context.Provider value={contextContent}>
@@ -44,6 +52,15 @@ const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
             )}
             <View style={styles.modalContent}>
               <Text style={styles.messageText}>{value.message}</Text>
+              {value.primaryButtonText && (
+                <TouchableHighlight
+                  style={[styles.primaryButton, primaryButtonStyles]}
+                  onPress={value.primaryButtonAction}>
+                  <Text style={styles.primaryButtonText}>
+                    {value.primaryButtonText}
+                  </Text>
+                </TouchableHighlight>
+              )}
             </View>
           </View>
         </View>
