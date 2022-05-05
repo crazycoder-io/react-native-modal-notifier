@@ -33,6 +33,21 @@ export default StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 20,
   },
+  primaryButton: {
+    backgroundColor: '#3a86ff',
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 20,
+    left: 70,
+    top: 12,
+    bottom: 0,
+    width: 140,
+  },
+  primaryButtonText: {
+    color: 'white',
+    fontSize: 17,
+    textAlign: 'center',
+  },
   modalCloseIcon: {
     fontSize: 15,
   },
@@ -52,13 +67,13 @@ export default StyleSheet.create({
     elevation: 5,
   },
   modalContent: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
     padding: 20,
   },
   titleText: {
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 19,
   },
   messageText: {
     textAlign: 'center',
