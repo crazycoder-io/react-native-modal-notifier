@@ -13,7 +13,7 @@ There are more than one usage example;
 3. Can be triggered by api service data
 
 <p align="center">
-    <img src="src/assets/react-native-modal-notifier.gif" alt="drawing" width="200" />
+    <img src="src/assets/rnmodalnotifier.gif" alt="drawing" width="200" />
 </p>
 
 ## Installation
@@ -72,3 +72,6 @@ const HomeScreen = () => {
 | title | Title of the message | string | yes |
 | message | The message of the content | string | yes |
 | headerShown | Header visibility option | boolean | no |
+| primaryButtonText | The text in the primary button content | string | no |
+| primaryButtonAction | The primary button action | func | no |
+| primaryButtonColor | The background color of the primary button | string | no |
