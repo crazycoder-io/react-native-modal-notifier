@@ -1,6 +1,6 @@
 {
   "name": "react-native-modal-notifier",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "react-native-modal-notifier is a third party in-app notification package! It provides modal notification popup.",
   "main": "index.ts",
   "scripts": {

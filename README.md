@@ -67,11 +67,12 @@ const HomeScreen = () => {
 
 ## Props of useNotifier
 
-| Prop Name | Prop Description | Data Type  | Required  |
+| Name | Description | Type  | Default  |
 |-----------------|:-------------|:---------------:|---------------:|
-| title | Title of the message | string | yes |
-| message | The message of the content | string | yes |
-| headerShown | Header visibility option | boolean | no |
-| primaryButtonText | The text in the primary button content | string | no |
-| primaryButtonAction | The primary button action | func | no |
-| primaryButtonColor | The background color of the primary button | string | no |
+| title | Title of the message | string | `null` |
+| message | The message of the content | string | `null` |
+| headerShown | Header visibility option | boolean | `true` |
+| primaryButtonText | The text in the primary button content | string | `undefined` |
+| primaryButtonAction | The primary button action | func | `undefined` |
+| primaryButtonColor | The background color of the primary button | string | `#3a86ff` |
+| primaryButtonPosition | The position of the primary button in the notifier | `center`  or `right` or  `left` | `center` |
