@@ -38,10 +38,7 @@ export default StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 12,
     borderRadius: 20,
-    left: 70,
     top: 12,
-    bottom: 0,
-    width: 140,
   },
   primaryButtonText: {
     color: 'white',
@@ -67,9 +64,11 @@ export default StyleSheet.create({
     elevation: 5,
   },
   modalContent: {
+    alignItems: 'center',
     flexDirection: 'column',
     justifyContent: 'space-evenly',
-    padding: 20,
+    paddingVertical: 20,
+    paddingHorizontal: 12,
   },
   titleText: {
     textAlign: 'center',

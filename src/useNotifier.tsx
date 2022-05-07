@@ -7,6 +7,7 @@ const defaultValues: ValueProps = {
   message: null,
   headerShown: true,
   primaryButtonText: undefined,
+  primaryButtonPosition: 'center',
 };
 
 export default () => {

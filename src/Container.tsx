@@ -14,6 +14,7 @@ export type ValueProps = {
   primaryButtonText?: string;
   primaryButtonColor?: string;
   primaryButtonAction?: () => void;
+  primaryButtonPosition?: 'center' | 'left' | 'right';
 };
 
 const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
@@ -30,9 +31,20 @@ const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
     setVisibility,
   };
 
-  const primaryButtonStyles: {backgroundColor?: string} = {};
+  const primaryButtonStyles: {
+    backgroundColor?: string;
+    left?: number;
+    right?: number;
+  } = {};
   if (value.primaryButtonColor) {
     primaryButtonStyles.backgroundColor = value.primaryButtonColor;
+  }
+  if (value.primaryButtonPosition && value.primaryButtonPosition !== 'center') {
+    if (value.primaryButtonPosition === 'left') {
+      primaryButtonStyles.right = 40;
+    } else {
+      primaryButtonStyles.left = 40;
+    }
   }
 
   return (
