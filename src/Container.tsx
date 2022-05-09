@@ -1,5 +1,5 @@
 import React, {FC, useState} from 'react';
-import {View, Text, Modal, TouchableHighlight} from 'react-native';
+import {View, Text, Modal, TouchableHighlight, Image, ImageSourcePropType} from 'react-native';
 
 import Context from './Context';
 import styles from './styles';
@@ -14,6 +14,7 @@ export type ValueProps = {
   primaryButtonText?: string;
   primaryButtonColor?: string;
   primaryButtonAction?: () => void;
+  type?: 'default' | 'warning' | 'error' | 'info';
   primaryButtonPosition?: 'center' | 'left' | 'right';
 };
 
@@ -47,6 +48,14 @@ const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
     }
   }
 
+  let icon: ImageSourcePropType;
+  switch(value.type) {
+    case 'error': icon = require(`./assets/error.png`); break;
+    case 'info': icon = require(`./assets/info.png`); break;
+    case 'warning': icon = require(`./assets/warning.png`); break;
+    default: break;
+  }
+
   return (
     <Context.Provider value={contextContent}>
       <Modal animationType="slide" transparent={true} visible={visibility}>
@@ -54,6 +63,7 @@ const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
           <View style={styles.modalView}>
             {value.headerShown && (
               <View style={styles.modalHeader}>
+                {value.type !== 'default' && icon && <Image source={icon} style={styles.headerIcon} />}
                 <Text style={styles.titleText}>{value.title}</Text>
                 <TouchableHighlight
                   style={styles.closeButton}

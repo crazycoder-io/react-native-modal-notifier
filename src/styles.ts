@@ -15,6 +15,10 @@ export default StyleSheet.create({
     borderBottomColor: '#CCCCCC',
     borderBottomWidth: 1,
   },
+  headerIcon: {
+    width: 25,
+    height: 25,
+  },
   closeButton: {
     shadowColor: '#000',
     shadowOffset: {

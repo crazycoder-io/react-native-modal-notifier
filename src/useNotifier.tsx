@@ -5,6 +5,7 @@ import Context from './Context';
 const defaultValues: ValueProps = {
   title: null,
   message: null,
+  type: 'default',
   headerShown: true,
   primaryButtonText: undefined,
   primaryButtonPosition: 'center',
