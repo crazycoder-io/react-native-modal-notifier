@@ -1,5 +1,12 @@
 import React, {FC, useState} from 'react';
-import {View, Text, Modal, TouchableHighlight, Image, ImageSourcePropType} from 'react-native';
+import {
+  View,
+  Text,
+  Modal,
+  TouchableHighlight,
+  Image,
+  ImageSourcePropType,
+} from 'react-native';
 
 import Context from './Context';
 import styles from './styles';
@@ -9,10 +16,11 @@ interface NotifierContainerProps {
 }
 export type ValueProps = {
   title: string;
-  message: string;
+  message?: string;
   headerShown?: boolean;
   primaryButtonText?: string;
   primaryButtonColor?: string;
+  childComponent?: JSX.Element;
   primaryButtonAction?: () => void;
   type?: 'default' | 'warning' | 'error' | 'info';
   primaryButtonPosition?: 'center' | 'left' | 'right';
@@ -21,8 +29,6 @@ export type ValueProps = {
 const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
   const [value, setValue] = useState<ValueProps>({
     title: '',
-    message: '',
-    headerShown: true,
   });
   const [visibility, setVisibility] = useState(false);
   const contextContent = {
@@ -49,11 +55,18 @@ const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
   }
 
   let icon: ImageSourcePropType;
-  switch(value.type) {
-    case 'error': icon = require(`./assets/error.png`); break;
-    case 'info': icon = require(`./assets/info.png`); break;
-    case 'warning': icon = require(`./assets/warning.png`); break;
-    default: break;
+  switch (value.type) {
+    case 'error':
+      icon = require(`./assets/error.png`);
+      break;
+    case 'info':
+      icon = require(`./assets/info.png`);
+      break;
+    case 'warning':
+      icon = require(`./assets/warning.png`);
+      break;
+    default:
+      break;
   }
 
   return (
@@ -63,7 +76,9 @@ const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
           <View style={styles.modalView}>
             {value.headerShown && (
               <View style={styles.modalHeader}>
-                {value.type !== 'default' && icon && <Image source={icon} style={styles.headerIcon} />}
+                {value.type !== 'default' && icon && (
+                  <Image source={icon} style={styles.headerIcon} />
+                )}
                 <Text style={styles.titleText}>{value.title}</Text>
                 <TouchableHighlight
                   style={styles.closeButton}
@@ -73,7 +88,10 @@ const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
               </View>
             )}
             <View style={styles.modalContent}>
-              <Text style={styles.messageText}>{value.message}</Text>
+              {value.message && (
+                <Text style={styles.messageText}>{value.message}</Text>
+              )}
+              {value.childComponent && value.childComponent}
               {value.primaryButtonText && (
                 <TouchableHighlight
                   style={[styles.primaryButton, primaryButtonStyles]}
