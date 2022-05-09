@@ -10,6 +10,8 @@ const defaultValues: ValueProps = {
   primaryButtonText: undefined,
   primaryButtonPosition: 'center',
   contentImageType: 'square',
+  contentImageSize: 'middle',
+  contentImageRadius: false,
 };
 
 export default () => {
