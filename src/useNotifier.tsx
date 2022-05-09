@@ -9,6 +9,7 @@ const defaultValues: ValueProps = {
   headerShown: true,
   primaryButtonText: undefined,
   primaryButtonPosition: 'center',
+  contentImageType: 'square',
 };
 
 export default () => {
