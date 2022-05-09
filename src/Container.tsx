@@ -6,10 +6,19 @@ import {
   TouchableHighlight,
   Image,
   ImageSourcePropType,
+  StyleProp,
+  ImageStyle,
 } from 'react-native';
 
 import Context from './Context';
-import styles from './styles';
+import styles, {
+  sRectangle,
+  sSquare,
+  mRectangle,
+  mSquare,
+  lRectangle,
+  lSquare,
+} from './styles';
 
 interface NotifierContainerProps {
   children: JSX.Element;
@@ -22,6 +31,10 @@ export type ValueProps = {
   primaryButtonColor?: string;
   childComponent?: JSX.Element;
   primaryButtonAction?: () => void;
+  contentImage?: ImageSourcePropType;
+  contentImageRadius?: boolean;
+  contentImageSize?: 'small' | 'middle' | 'large';
+  contentImageType?: 'square' | 'rectangle';
   type?: 'default' | 'warning' | 'error' | 'info';
   primaryButtonPosition?: 'center' | 'left' | 'right';
 };
@@ -69,6 +82,43 @@ const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
       break;
   }
 
+  let contentImageStyle: StyleProp<ImageStyle> = {};
+  switch (value.contentImageSize) {
+    case 'small': {
+      if (value.contentImageType === 'square') {
+        contentImageStyle = {...contentImageStyle, ...sSquare};
+        break;
+      } else {
+        contentImageStyle = {...contentImageStyle, ...sRectangle};
+        break;
+      }
+    }
+    case 'middle': {
+      if (value.contentImageType === 'square') {
+        contentImageStyle = {...contentImageStyle, ...mSquare};
+        break;
+      } else {
+        contentImageStyle = {...contentImageStyle, ...mRectangle};
+        break;
+      }
+    }
+    case 'large': {
+      if (value.contentImageType === 'square') {
+        contentImageStyle = {...contentImageStyle, ...lSquare};
+        break;
+      } else {
+        contentImageStyle = {...contentImageStyle, ...lRectangle};
+        break;
+      }
+    }
+    default:
+      break;
+  }
+
+  if (value.contentImageRadius) {
+    contentImageStyle = { ...contentImageStyle, borderRadius: 20 };
+  }
+
   return (
     <Context.Provider value={contextContent}>
       <Modal animationType="slide" transparent={true} visible={visibility}>
@@ -90,6 +140,9 @@ const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
             <View style={styles.modalContent}>
               {value.message && (
                 <Text style={styles.messageText}>{value.message}</Text>
+              )}
+              {value.contentImage && (
+                <Image source={value.contentImage} style={contentImageStyle} />
               )}
               {value.childComponent && value.childComponent}
               {value.primaryButtonText && (
