@@ -83,3 +83,33 @@ export default StyleSheet.create({
     fontSize: 17,
   },
 });
+
+export const sSquare = {
+  width: 50,
+  height: 50,
+};
+
+export const sRectangle = {
+  width: 50,
+  height: 70,
+};
+
+export const mSquare = {
+  width: 120,
+  height: 120,
+};
+
+export const mRectangle = {
+  width: 120,
+  height: 150,
+};
+
+export const lSquare = {
+  width: 210,
+  height: 210,
+};
+
+export const lRectangle = {
+  width: 210,
+  height: 240,
+};
