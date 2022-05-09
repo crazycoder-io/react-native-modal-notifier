@@ -75,4 +75,5 @@ const HomeScreen = () => {
 | primaryButtonText | The text in the primary button content | string | `undefined` |
 | primaryButtonAction | The primary button action | func | `undefined` |
 | primaryButtonColor | The background color of the primary button | string | `#3a86ff` |
-| primaryButtonPosition | The position of the primary button in the notifier | `center`  or `right` or  `left` | `center` |
+| primaryButtonPosition | The position of the primary button in the notifier | `center` or `right` or `left` | `center` |
+| type | The type of modal notifier | `default` or `info` or `warning` or `error` | `default` |
