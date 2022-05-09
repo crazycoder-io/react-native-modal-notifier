@@ -6,7 +6,7 @@
 
 
 
-**react-native-modal-notifier** is a third party in-app notification package! It provides modal notification popup.
+**react-native-modal-notifier** is a third party in-app notification notifier package! It provides modal notification popup. And reachable from any screen or component after the wrap the application with container.
 There are more than one usage example;
 1. Can be triggered by `useEffect` function
 2. Can be triggered by user action
@@ -77,3 +77,8 @@ const HomeScreen = () => {
 | primaryButtonColor | The background color of the primary button | string | `#3a86ff` |
 | primaryButtonPosition | The position of the primary button in the notifier | `center` or `right` or `left` | `center` |
 | type | The type of modal notifier | `default` or `info` or `warning` or `error` | `default` |
+| childComponent | The child component to be rendered within the modal component | `JSX.Element` | `undefined` |
+| contentImage | The image uri or address to be rendered within the modal | `ImageSourcePropType` | `undefined` |
+| contentImageRadius | The image radius controller | boolean | `false` |
+| contentImageSize | The size of the content image | `small` or `middle` or `large` | `middle` |
+| contentImageType | The image type of content | `square` or `rectangle` | `square` |
