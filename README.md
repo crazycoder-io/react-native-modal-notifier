@@ -82,3 +82,4 @@ const HomeScreen = () => {
 | contentImageRadius | The image radius controller | boolean | `false` |
 | contentImageSize | The size of the content image | `small` or `middle` or `large` | `middle` |
 | contentImageType | The image type of content | `square` or `rectangle` | `square` |
+| autoCloseDelay | The timer of the auto close the notifier as millisecond | `number` | null |
