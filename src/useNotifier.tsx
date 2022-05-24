@@ -12,6 +12,7 @@ const defaultValues: ValueProps = {
   contentImageType: 'square',
   contentImageSize: 'middle',
   contentImageRadius: false,
+  autoCloseDelay: null,
 };
 
 export default () => {

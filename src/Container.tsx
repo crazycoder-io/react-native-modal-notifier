@@ -3,7 +3,7 @@ import {
   View,
   Text,
   Modal,
-  TouchableHighlight,
+  TouchableOpacity,
   Image,
   ImageSourcePropType,
   StyleProp,
@@ -37,6 +37,7 @@ export type ValueProps = {
   contentImageType?: 'square' | 'rectangle';
   type?: 'default' | 'warning' | 'error' | 'info';
   primaryButtonPosition?: 'center' | 'left' | 'right';
+  autoCloseDelay?: number;
 };
 
 const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
@@ -119,6 +120,12 @@ const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
     contentImageStyle = { ...contentImageStyle, borderRadius: 20 };
   }
 
+  if (value.autoCloseDelay) {
+    setTimeout(() => {
+      setVisibility(false);
+    }, value.autoCloseDelay);
+  }
+
   return (
     <Context.Provider value={contextContent}>
       <Modal animationType="slide" transparent={true} visible={visibility}>
@@ -130,11 +137,11 @@ const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
                   <Image source={icon} style={styles.headerIcon} />
                 )}
                 <Text style={styles.titleText}>{value.title}</Text>
-                <TouchableHighlight
+                <TouchableOpacity
                   style={styles.closeButton}
                   onPress={() => setVisibility(false)}>
                   <Text style={styles.modalCloseIcon}>X</Text>
-                </TouchableHighlight>
+                </TouchableOpacity>
               </View>
             )}
             <View style={styles.modalContent}>
@@ -146,13 +153,13 @@ const NotifierContainer: FC<NotifierContainerProps> = ({children}) => {
               )}
               {value.childComponent && value.childComponent}
               {value.primaryButtonText && (
-                <TouchableHighlight
+                <TouchableOpacity
                   style={[styles.primaryButton, primaryButtonStyles]}
                   onPress={value.primaryButtonAction}>
                   <Text style={styles.primaryButtonText}>
                     {value.primaryButtonText}
                   </Text>
-                </TouchableHighlight>
+                </TouchableOpacity>
               )}
             </View>
           </View>
